@@ -1,0 +1,385 @@
+<html lang="en" vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">SEAN NEV // FULL STACK</title>
+    
+    <style vid="5">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+        :root {
+            --bg-outer: #D4D4D2;
+            --bg-inner: #F4F4F0;
+            --text-main: #111111;
+            --text-label: #707070;
+            --border-color: #111111;
+            
+            --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            
+            --grid-label-width: 180px;
+            --row-pad-v: 1.25rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-outer);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 4vw;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        
+        .sheet {
+            background-color: var(--bg-inner);
+            width: 100%;
+            max-width: 1280px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.03); 
+            display: flex;
+            flex-direction: column;
+        }
+
+        
+        .row {
+            display: grid;
+            grid-template-columns: var(--grid-label-width) 1fr;
+            border-bottom: 1px solid var(--border-color);
+            padding: var(--row-pad-v) 2rem;
+            align-items: baseline;
+            gap: 2rem;
+        }
+
+        .row.no-border {
+            border-bottom: none;
+        }
+
+        .row.header, .row.footer {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .label {
+            color: var(--text-label);
+        }
+
+        .data {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        
+        .data-grid {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: 2rem;
+        }
+
+        .data-grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            padding-bottom: 2px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        a:hover {
+            border-bottom: 1px solid var(--text-main);
+        }
+
+        a.active {
+            border-bottom: 1px solid var(--text-main);
+        }
+
+        
+        .tech-tag {
+            display: inline-block;
+            color: var(--text-label);
+        }
+        
+        .tech-tag::after {
+            content: ', ';
+        }
+        .tech-tag:last-child::after {
+            content: '';
+        }
+
+        .sys-code {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-label);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        
+        .section-break {
+            height: 4rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-label);
+            width: 100%;
+        }
+
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+            .sheet {
+                box-shadow: none;
+            }
+            .row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+                padding: 1rem 1.5rem;
+            }
+            .data-grid, .data-grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .label {
+                font-weight: 500;
+                color: var(--text-main);
+                margin-bottom: 0.25rem;
+            }
+            .row.header {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            nav {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body vid="6">
+
+    <main class="sheet" vid="7">
+        
+        
+        <header class="row header" vid="8">
+            <div class="name" vid="9">sean.nev_dev</div>
+            <nav vid="10">
+                <a href="#index" class="active" vid="11">Index</a>
+                <a href="#log" vid="12">Log</a>
+                <a href="#stack" vid="13">Stack</a>
+                <a href="#ping" vid="14">Ping</a>
+            </nav>
+        </header>
+
+        
+        <section id="index" vid="15">
+            <div class="row" vid="16">
+                <div class="label" vid="17">Primary function</div>
+                <div class="data" vid="18">
+                    Full-stack web development focused on React-based applications, real-time systems, and clean, maintainable UI architecture.
+                </div>
+            </div>
+            
+            <div class="row" vid="19">
+                <div class="label" vid="20">Current status</div>
+                <div class="data" vid="21">
+                    Actively seeking full-time software engineering roles. Open to freelance and contract work.
+                </div>
+            </div>
+
+            <div class="row" vid="22">
+                <div class="label" vid="23">Location</div>
+                <div class="data" vid="24">
+                    Pell City, Alabama (CST)
+                </div>
+            </div>
+        </section>
+
+        <div class="section-break" vid="25"></div>
+
+        
+        <section id="log" vid="26">
+            <div class="row" vid="27">
+                <div class="label" vid="28">Work_Log</div>
+                <div class="data" vid="29">Selected projects and applied experience.</div>
+            </div>
+
+            <div class="row" vid="30">
+                <div class="label" vid="31">2025—Present</div>
+                <div class="data data-grid" vid="32">
+                    <div vid="33">
+                        <strong vid="34">
+                            <a href="https://collabroom-psi.vercel.app/" target="_blank">CollabRoom</a>
+                        </strong><br vid="35">
+                        Real-time collaborative web app
+                    </div>
+                    <div vid="36">
+                        Built an interactive shared “room” with drawing, media, and mini-game features. Focused on real-time synchronization and UX for collaborative workflows.
+                        <span class="sys-code" vid="37">ENV: React, Firebase, JavaScript, React Markdown</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" vid="38">
+                <div class="label" vid="39">2024—2025</div>
+                <div class="data data-grid" vid="40">
+                    <div vid="41">
+                        <strong vid="42">
+                            <a href="https://www.bogged.world/" target="_blank">Bogged</a>
+                        </strong><br vid="43">
+                        Interactive web experience
+                    </div>
+                    <div vid="44">
+                        Designed and developed a highly animated, responsive site with modern UI patterns and performance-focused rendering.
+                        <span class="sys-code" vid="45">ENV: Vite, React, TypeScript, Tailwind</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" vid="46">
+                <div class="label" vid="47">2024</div>
+                <div class="data data-grid" vid="48">
+                    <div vid="49">
+                        <strong vid="50">
+                            <a href="https://global-gmonads.vercel.app/" target="_blank">Global Gmonads</a>
+                        </strong><br vid="51">
+                        Interactive mapping tool
+                    </div>
+                    <div vid="52">
+                        Built a global pin-pointing system with an interactive globe and flexible privacy controls for user location sharing.
+                        <span class="sys-code" vid="53">ENV: Supabase, React, TypeScript, CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" vid="54">
+                <div class="label" vid="55">2024</div>
+                <div class="data data-grid" vid="56">
+                    <div vid="57">
+                        <strong vid="58">
+                            <a href="https://nft-display-psi.vercel.app/" target="_blank">The Gallery</a>
+                        </strong><br vid="59">
+                        Pull Monad Testnet NFT data
+                    </div>
+                    <div vid="60">
+                        Developed a dashboard to fetch and display NFT data with image editing and collage features.
+                        <span class="sys-code" vid="61">ENV: React, Vite, Alchemy API, CSS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-break" vid="62"></div>
+
+        
+        <section id="stack" vid="63">
+            <div class="row" vid="64">
+                <div class="label" vid="65">Core Stack</div>
+                <div class="data" vid="66">
+                    <span class="tech-tag" vid="67">JavaScript</span>
+                    <span class="tech-tag" vid="68">TypeScript</span>
+                    <span class="tech-tag" vid="69">React</span>
+                    <span class="tech-tag" vid="70">Node.js</span>
+                    <span class="tech-tag" vid="71">Vite</span>
+                </div>
+            </div>
+
+            <div class="row" vid="72">
+                <div class="label" vid="73">Backend &amp; Data</div>
+                <div class="data" vid="74">
+                    <span class="tech-tag" vid="75">Firebase</span>
+                    <span class="tech-tag" vid="76">Supabase</span>
+                    <span class="tech-tag" vid="77">REST APIs</span>
+                </div>
+            </div>
+
+            <div class="row" vid="79">
+                <div class="label" vid="80">Interface &amp; Styling</div>
+                <div class="data" vid="81">
+                    <span class="tech-tag" vid="82">Tailwind CSS</span>
+                    <span class="tech-tag" vid="83">CSS3</span>
+                    <span class="tech-tag" vid="85">UI/UX</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-break" vid="86"></div>
+
+        
+        <section id="ping" vid="87">
+            <div class="row" vid="88">
+                <div class="label" vid="89">Email protocol</div>
+                <div class="data" vid="90">
+                    <a href="mailto:seannevdev@proton.me" vid="91">seannevdev@proton.me</a>
+                </div>
+            </div>
+            
+            <div class="row" vid="92">
+                <div class="label" vid="93">GitHub repository</div>
+                <div class="data" vid="94">
+                    <a href="https://github.com/seannevdev" target="_blank" vid="95">github.com/seannevdev</a>
+                </div>
+            </div>
+
+            <div class="row" vid="96">
+                <div class="label" vid="97">Network transmission</div>
+                <div class="data" vid="98">
+                    <a href="https://www.linkedin.com/in/sean-devs" target="_blank" vid="99">linkedin.com/in/sean-devs</a>
+                </div>
+            </div>
+
+
+            <div class="row" vid="104">
+                <div class="label" vid="105">Telegram</div>
+                <div class="data" vid="106">
+                    <a href="https://t.me/monadbull" target="_blank" vid="107">@monadbull</a>
+                </div>
+            </div>
+        </section>
+
+        
+        <footer class="row footer no-border" vid="108">
+            <div class="label" vid="109"></div>
+            <div class="footer-content" vid="110">
+                <span vid="111">Design and development: self</span>
+                <span vid="112">Build 1.0.0</span>
+            </div>
+        </footer>
+
+    </main>
+
+
+</body></html>
