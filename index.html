@@ -1,8 +1,10 @@
-<html lang="en" vid="0"><head vid="1">
+<html lang="en" vid="0">
+
+<head vid="1">
     <meta charset="UTF-8" vid="2">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
     <title vid="4">SEAN NEV // FULL STACK</title>
-    
+
     <style vid="5">
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 
@@ -12,13 +14,22 @@
             --text-main: #111111;
             --text-label: #707070;
             --border-color: #111111;
-            
+
             --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            
+
             --grid-label-width: 180px;
             --row-pad-v: 1.25rem;
         }
+
+        .data-grid a::after {
+            content: ' ↗';
+            font-size: 0.9em;
+            color: var(--text-label);
+            margin-left: 4px;
+            transition: transform 0.2s ease;
+        }
+
 
         * {
             box-sizing: border-box;
@@ -42,17 +53,17 @@
             align-items: flex-start;
         }
 
-        
+
         .sheet {
             background-color: var(--bg-inner);
             width: 100%;
             max-width: 1280px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.03); 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.03);
             display: flex;
             flex-direction: column;
         }
 
-        
+
         .row {
             display: grid;
             grid-template-columns: var(--grid-label-width) 1fr;
@@ -66,7 +77,8 @@
             border-bottom: none;
         }
 
-        .row.header, .row.footer {
+        .row.header,
+        .row.footer {
             padding-top: 2rem;
             padding-bottom: 2rem;
         }
@@ -81,7 +93,7 @@
             gap: 0.5rem;
         }
 
-        
+
         .data-grid {
             display: grid;
             grid-template-columns: 2fr 3fr;
@@ -94,7 +106,7 @@
             gap: 2rem;
         }
 
-        
+
         nav {
             display: flex;
             gap: 1.5rem;
@@ -118,15 +130,16 @@
             border-bottom: 1px solid var(--text-main);
         }
 
-        
+
         .tech-tag {
             display: inline-block;
             color: var(--text-label);
         }
-        
+
         .tech-tag::after {
             content: ', ';
         }
+
         .tech-tag:last-child::after {
             content: '';
         }
@@ -141,13 +154,13 @@
             margin-top: 0.25rem;
         }
 
-        
+
         .section-break {
             height: 4rem;
             border-bottom: 1px solid var(--border-color);
         }
 
-        
+
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -155,33 +168,40 @@
             width: 100%;
         }
 
-        
+
         @media (max-width: 768px) {
             body {
                 padding: 0;
             }
+
             .sheet {
                 box-shadow: none;
             }
+
             .row {
                 grid-template-columns: 1fr;
                 gap: 0.5rem;
                 padding: 1rem 1.5rem;
             }
-            .data-grid, .data-grid-3 {
+
+            .data-grid,
+            .data-grid-3 {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
+
             .label {
                 font-weight: 500;
                 color: var(--text-main);
                 margin-bottom: 0.25rem;
             }
+
             .row.header {
                 display: flex;
                 flex-direction: column;
                 gap: 1.5rem;
             }
+
             nav {
                 justify-content: flex-start;
                 flex-wrap: wrap;
@@ -189,11 +209,12 @@
         }
     </style>
 </head>
+
 <body vid="6">
 
     <main class="sheet" vid="7">
-        
-        
+
+
         <header class="row header" vid="8">
             <div class="name" vid="9">sean.nev_dev</div>
             <nav vid="10">
@@ -203,7 +224,7 @@
             </nav>
         </header>
 
-        
+
         <section id="index" vid="15">
             <div class="row" vid="16">
                 <div class="label" vid="17">Primary function</div>
@@ -212,7 +233,7 @@
 
                 </div>
             </div>
-            
+
             <div class="row" vid="19">
                 <div class="label" vid="20">Status</div>
                 <div class="data" vid="21">
@@ -230,7 +251,7 @@
 
         <div class="section-break" vid="25"></div>
 
-        
+
         <section id="log" vid="26">
             <div class="row" vid="27">
                 <div class="label" vid="28">Work_Log</div>
@@ -247,8 +268,12 @@
                         Distributed event processing system
                     </div>
                     <div vid="36">
-                        Production-style event ingestion pipeline using a decoupled, queue-based architecture. Events are received via an authenticated REST API, enqueued in Redis (BullMQ), and processed asynchronously by worker services with retry, backoff, and dead-letter queue handling. Built a real-time React dashboard to monitor event lifecycle, system metrics, and failure states.
-                        <span class="sys-code" vid="37">ENV: React, Node.js, Express, PostgreSQL, Redis, BullMQ, Vercel, Render</span>
+                        Production-style event ingestion pipeline using a decoupled, queue-based architecture. Events
+                        are received via an authenticated REST API, enqueued in Redis (BullMQ), and processed
+                        asynchronously by worker services with retry, backoff, and dead-letter queue handling. Built a
+                        real-time React dashboard to monitor event lifecycle, system metrics, and failure states.
+                        <span class="sys-code" vid="37">ENV: React, Node.js, Express, PostgreSQL, Redis, BullMQ, Vercel,
+                            Render</span>
                     </div>
                 </div>
             </div>
@@ -263,7 +288,8 @@
                         Real-time collaborative web app
                     </div>
                     <div vid="36">
-                        Interactive shared canvas with drawing, photoshop, and mini-game features. Real-time synchronization and UX for collaborative workflows.
+                        Interactive shared canvas with drawing, photoshop, and mini-game features. Real-time
+                        synchronization and UX for collaborative workflows.
                         <span class="sys-code" vid="37">ENV: React, Firebase, JavaScript, React Markdown</span>
                     </div>
                 </div>
@@ -295,7 +321,8 @@
                         Interactive mapping tool
                     </div>
                     <div vid="52">
-                        Built a global pin-pointing system with an interactive globe and flexible privacy controls for user location sharing.  (database inactive)
+                        Built a global pin-pointing system with an interactive globe and flexible privacy controls for
+                        user location sharing. (database inactive)
                         <span class="sys-code" vid="53">ENV: Supabase, React, TypeScript, CSS</span>
                     </div>
                 </div>
@@ -318,10 +345,10 @@
             </div>
         </section>
 
-    
+
         <div class="section-break" vid="86"></div>
 
-        
+
         <section id="ping" vid="87">
             <div class="row" vid="88">
                 <div class="label" vid="89">Email</div>
@@ -329,7 +356,7 @@
                     <a href="mailto:seannevdev@proton.me" vid="91">seannevdev@proton.me</a>
                 </div>
             </div>
-            
+
             <div class="row" vid="92">
                 <div class="label" vid="93">GitHub</div>
                 <div class="data" vid="94">
@@ -340,7 +367,8 @@
             <div class="row" vid="96">
                 <div class="label" vid="97">Linkedin</div>
                 <div class="data" vid="98">
-                    <a href="https://www.linkedin.com/in/sean-devs" target="_blank" vid="99">linkedin.com/in/sean-devs</a>
+                    <a href="https://www.linkedin.com/in/sean-devs" target="_blank"
+                        vid="99">linkedin.com/in/sean-devs</a>
                 </div>
             </div>
 
@@ -354,7 +382,7 @@
 
         </section>
 
-        
+
         <footer class="row footer no-border" vid="108">
             <div class="label" vid="109"></div>
             <div class="footer-content" vid="110">
@@ -366,4 +394,6 @@
     </main>
 
 
-</body></html>
+</body>
+
+</html>
